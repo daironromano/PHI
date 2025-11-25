@@ -11,14 +11,14 @@ architecture Sim of tb_sistema is
     -- Declaração do componente a ser testado (DUT)
     component sistema_top
         Port ( 
-            A, B   : in  STD_LOGIC_VECTOR(3 downto 0);
+            A, B   : in  STD_LOGIC_VECTOR(7 downto 0);
             SEL    : in  STD_LOGIC;
             S1, S2 : out STD_LOGIC_VECTOR(6 downto 0)
         );
     end component;
 
     -- Sinais para conectar no componente
-    signal t_A, t_B   : STD_LOGIC_VECTOR(3 downto 0);
+    signal t_A, t_B   : STD_LOGIC_VECTOR(7 downto 0);
     signal t_SEL      : STD_LOGIC;
     signal t_S1, t_S2 : STD_LOGIC_VECTOR(6 downto 0);
 
@@ -41,7 +41,7 @@ begin
     process
         variable linha_leitura : line;
         variable linha_escrita : line;
-        variable var_A, var_B  : STD_LOGIC_VECTOR(3 downto 0);
+        variable var_A, var_B  : STD_LOGIC_VECTOR(7 downto 0);
         variable var_SEL       : STD_LOGIC;
     begin
         -- Loop que roda enquanto houver linhas no arquivo de texto

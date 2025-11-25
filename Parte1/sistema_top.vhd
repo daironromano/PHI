@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity sistema_top is
     Port ( 
-        A, B   : in  STD_LOGIC_VECTOR (3 downto 0); -- Entradas dos dados [cite: 27]
+        A, B   : in  STD_LOGIC_VECTOR (7 downto 0); -- Entradas dos dados [cite: 27]
         SEL    : in  STD_LOGIC;                     -- Seletor de troca [cite: 28]
         S1, S2 : out STD_LOGIC_VECTOR (6 downto 0)  -- Saídas para os displays [cite: 27]
     );
@@ -14,7 +14,7 @@ architecture Estrutural of sistema_top is
     -- Declaração do componente que criamos na Fase 1
     component conversor_7seg
         Port ( 
-            dado_in : in  STD_LOGIC_VECTOR (3 downto 0);
+            dado_in : in  STD_LOGIC_VECTOR (7 downto 0);
             seg_out : out STD_LOGIC_VECTOR (6 downto 0)
         );
     end component;
